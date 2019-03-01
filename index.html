@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Calculator</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        class Calculator extends React.Component {
+            render() {
+                return(
+                    <div>
+                        <Screen />
+                        <Button value="C" />
+                        <Button value="+/-" />
+                        <Button value="/" />
+                        <Button value="x" />
+                        <Button value="7" />
+                        <Button value="8" />
+                        <Button value="9" />
+                        <Button value="-" />
+                        <Button value="4" />
+                        <Button value="5" />
+                        <Button value="6" />
+                        <Button value="+" />
+                        <Button value="1" />
+                        <Button value="2" />
+                        <Button value="3" />
+                        <Button value="0" />
+                        <Button value="." />
+                        <Button value="=" />
+                    </div>
+                )
+            }
+        }
+
+        class Button extends React.Component {
+            constructor(props) {
+                super(props)
+
+                this.state = {
+                    value: this.props.value
+                }
+            }
+            render() {
+                return(
+                    <button>{this.state.value}</button>
+                )
+            }
+        }
+
+        class Screen extends React.Component {
+            render() {
+                return(
+                    <div></div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <Calculator />,
+            document.querySelector("#app")
+        )
+    </script>
+</body>
+</html>
